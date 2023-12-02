@@ -4,7 +4,7 @@ body {
     align-content: center;
     text-align: center;
     height: 100vh;
-    background-image: url(.//src/img/backgroundpingpong\,jpg.jpg);
+    background-image: url(../img/backgroundpingpong\,jpg.jpg);
     font-family: 'Raleway', sans-serif;
     background-size: cover;
 }
