@@ -1,0 +1,32 @@
+
+body {
+    
+    align-content: center;
+    text-align: center;
+    height: 100vh;
+    background-image: url(.//src/img/backgroundpingpong\,jpg.jpg);
+    font-family: 'Raleway', sans-serif;
+    background-size: cover;
+}
+
+#titulo{
+    color: rgb(255, 255, 255);
+    margin: 150px;
+    align-content: center;
+    text-align: center;
+    font-size: 100px;
+
+}
+
+
+#botao {
+    font-size: 50px;
+    padding: 20px;
+    color: white; 
+    background-color: brown;
+    border-radius: 20px; 
+    
+}
+
+
+

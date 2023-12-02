@@ -6,6 +6,8 @@ const mouse = { x: 0, y: 0 }
 
 const lineWidth = 15;
 
+
+
 const field = {
     w: window.innerWidth,
     h: window.innerHeight,
@@ -65,23 +67,40 @@ const rightPaddle = {
 };
 
 const score = {
-    human: 1,
-    computer: 2,
+    human: 0,
+    computer: 0,
     increaseHuman: function () {
-        this.human++
+        this.human++;
+        if (this.human === 10) {
+            alert("Parabéns! Você venceu o jogo!");
+            this.reset();
+        }
     },
     increaseComputer: function () {
-        this.computer++
+        this.computer++;
+        if (this.computer === 10) {
+            alert("O computador venceu! Tente novamente.");
+            this.reset();
+        }
+    },
+    reset: function () {
+        this.human = 0;
+        this.computer = 0;
+        ball.speed = 2; // Reinicia a velocidade da bola
+        rightPaddle.speed = 5; // Reinicia a velocidade da raquete direita
+        ball.x = field.w / 2;
+        ball.y = field.h / 2;
     },
     draw: function () {
-        canvasCtx.font = "bold 72px Arial"
-        canvasCtx.textAlign = 'center'
-        canvasCtx.textBaseline = "top"
-        canvasCtx.fillStyle = "#01341D"
-        canvasCtx.fillText(this.human, field.w / 4, 50)
-        canvasCtx.fillText(this.computer, field.w / 4 + window.innerWidth / 2, 50)
+        canvasCtx.font = "bold 72px Arial";
+        canvasCtx.textAlign = 'center';
+        canvasCtx.textBaseline = "top";
+        canvasCtx.fillStyle = "#ffffff";
+        canvasCtx.fillText(this.human, field.w / 4, 50);
+        canvasCtx.fillText(this.computer, field.w / 4 + window.innerWidth / 2, 50);
     }
-}
+};
+
 
 const ball = {
     x: 0,
@@ -97,6 +116,7 @@ const ball = {
             // verifica se a raquete direita está na posição y da bola
             if (this.y + this.radius > rightPaddle.y &&
                 this.y - this.radius < rightPaddle.y + rightPaddle.h
+                
             ) {
                 // rebate a bola invertendo o sinal de x 
                 this._reverseX()
@@ -105,6 +125,8 @@ const ball = {
                 score.increaseHuman()
                 this._pointUp()
             }
+            
+
         }
         // verifica se o jogador 2 fez um ponto (x < 0)
         if (this.x < this.radius + leftPaddle.w + gapX) {
