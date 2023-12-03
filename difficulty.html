@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Pong Game - Escolha a Dificuldade</title>
+    <link rel="stylesheet" href="./src/CSS/styleinit.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Oxanium:wght@300;400;700&family=Poppins:wght@200&family=Red+Hat+Display:wght@500;700&family=Rubik&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div>
+        <h1 id="titulo2">Escolha a <br> Dificuldade</h1>
+        <button class="glow-on-hover" onclick="startGame('easy')">Fácil</button>
+        <button class="glow-on-hover" onclick="startGame('medium')">Médio</button>
+        <button class="glow-on-hover" onclick="startGame('hard')">Difícil</button>
+    </div>
+
+    <script>
+        function startGame(difficulty) {
+            // Adapte esta função conforme necessário para lidar com a dificuldade escolhida
+            window.location.href = "pingponggame.html?difficulty=" + difficulty; // Redireciona para a página do jogo com a dificuldade escolhida
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,32 +1,116 @@
-
 body {
-    
-    align-content: center;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     height: 100vh;
-    background-image: url(../img/backgroundpingpong\,jpg.jpg);
-    font-family: 'Raleway', sans-serif;
+    background-image: url(../img/pingponggame.png);
+    font-family: 'Black Ops One', sans-serif;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: bottom;
+    margin: 0;
+    opacity: 1;
 }
 
-#titulo{
-    color: rgb(255, 255, 255);
-    margin: 150px;
-    align-content: center;
-    text-align: center;
-    font-size: 100px;
+#titulo {
+    font-size: 15vh;
+    color: transparent;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+#titulo2 {
+    margin: 10vh;
+    font-size: 15vh;
+    color: transparent;
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.glow-on-hover {
+    
+    opacity: 0; /* Adicionado para começar invisível */
+    animation: fadeIn 5s forwards; /* Adicionado animação fadeIn */
+    font-size: 4vh;
+    margin: 2vh;
+    width: 30vh;
+    height: 8vh;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    background-color: #7a00ff;
+    border-radius: 10px;
 
 }
 
+.glow-on-hover:before {
+    
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
 
-#botao {
-    font-size: 50px;
-    padding: 20px;
-    color: white; 
-    background-color: brown;
-    border-radius: 20px; 
+.glow-on-hover:active {
+    color: blue;
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
     
 }
 
+.glow-on-hover:hover:before {
+    opacity: 1;
+    
+}
 
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #601cb4;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
 
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}

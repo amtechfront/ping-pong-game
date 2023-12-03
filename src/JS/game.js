@@ -6,6 +6,23 @@ const mouse = { x: 0, y: 0 }
 
 const lineWidth = 15;
 
+function startGame(difficulty) {
+    // Configurar o jogo com base na dificuldade escolhida
+    alert('Iniciando o jogo com dificuldade: ' + difficulty);
+
+    // Por exemplo, você pode ajustar a velocidade da bola, a velocidade da raquete, etc.
+    if (difficulty === 'easy') {
+        ball.speed = 3;
+        rightPaddle.speed = 4;
+    } else if (difficulty === 'medium') {
+        ball.speed = 5;
+        rightPaddle.speed = 5;
+    } else if (difficulty === 'hard') {
+        ball.speed = 7;
+        rightPaddle.speed = 6;
+    }
+
+}
 
 
 const field = {
