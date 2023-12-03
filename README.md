@@ -10,5 +10,5 @@
 ### Próximas Atualizações
 
 * Retorno ao menu de dificuldade após derrota
-* Audio de entrada e no jogo
+* Audio e efeitos sonoros
   
