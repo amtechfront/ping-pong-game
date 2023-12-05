@@ -1,6 +1,6 @@
 # ping-pong-game
 
-## Jogo de ping-pong de um curso que estou fazendo, contém princípios basicos de HTML, CSS, JS
+## Jogo de ping-pong, contém princípios básicos de HTML, CSS, JS
 
 ### ÚLTIMAS ATUALIZAÇÕES
 
